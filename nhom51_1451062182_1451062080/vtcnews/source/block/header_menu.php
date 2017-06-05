@@ -7,11 +7,24 @@ $idLT=16;
 		<!--<a href="http://vtc.vn" title="" class="logo_main"></a>-->
 		<h1 style="display:inline;"><a href="/" style="overflow: hidden; height: 49px; display: inline-block;" title="VTC News: Tin tức 24h trong ngày - Đọc báo điện tử mới nhất hôm nay">
 			<img src="http://image.vtc.vn/themes/images/logo.png" alt="VTC News: Tin tức 24h trong ngày - Đọc báo điện tử mới nhất hôm nay"/>
-		</a></h1>
+		</a><!--  <form method = "post" action = "dologin.php">
+		   <p>Login Form</p>
+		   <input type = "button" id = "close_login" value="Close Login">
+		   <input type = "text" id = "login" placeholder = "User Id" name = "uid">
+		   <p><?php echo $status;?></p>
+		   <input type = "password" id = "password" name = "upass" placeholder = "***">
+		   <input type = "submit" id = "dologin" value = "Login" ">
+		  </form> -->
+			
+		</a>
+		</h1>
+
 		<div class="menu_search fr">
 			<!-- @uc_menu1 -->
 			<ul class="menu_main fl">
 				<li><a href="http://vtc.vn" title="VTC News: Tin tức 24h trong ngày - Đọc báo điện tử mới nhất hôm nay">Trang chủ</a></li>
+
+				
 				<li><a title="Truyền hình" href="http://tv.vtc.vn">Truyền hình</a></li>
 				<li><a title="Xã hội" href="/xa-hoi/">Xã hội</a></li>
 				<li><a title="Kinh tế" href="/kinh-te/">Kinh tế</a></li>

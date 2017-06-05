@@ -32,7 +32,10 @@
 
 <meta name="eclick_verify" content="dFFUXlYXLRcYGVlEahMECBMHMAIYGQ8eNk0aBw=="/>
 
-
+  <title>VTC News: Tin tức 24h trong ngày - Đọc báo điện tử mới nhất hôm nay</title>
+  <link href="css/main.css" rel="stylesheet" type="text/css" />
+  <link href="css/exp.css" rel="stylesheet" type="text/css" />
+  
 <link rel="stylesheet" type="text/css" href="/lib/explus/explus.css?v=0" />
 <title>Chính trị - Xã hội | Pháp Luật Plus</title>
 <meta name="description" content="Chính trị - Xã hội" />
@@ -45,7 +48,34 @@
 </head>
 <body>
 <header>
-</header><main>
+</header>
+<main>
+  <?php
+  require "block/menu_left.php"; 
+  ?>
+  <!-- /#cssmemu --><div class="wrapper">
+  <div id="header-sticky-wrapper" class="sticky-wrapper">
+    <div id="header">
+      <?php
+      require "block/header_menu.php"; 
+      ?>
+    </div>
+  </div><div class="news_hot pkg">
+
+  <?php
+  require "block/maraquee_hot.php"; 
+  ?>
+
+  <ul class="fr list_weather">
+    <li style="float: right;"><a title="Sự kiện nóng trong ngày" href="/su-kien-nong/">SỰ KIỆN HOT</a></li>
+    <li style="float: right; margin: 0;">HOTLINE: MB - 01255911911, MN - 0911848186 </li>
+  </ul>
+
+  <div style="clear: both;"></div>
+
+</div>
+
+
     <div class="inner" style="background-color: white; padding: 0 10px 10px 10px;">
         <div class="top-main">
             <div class="pull-left" style="display: inline-block; width: calc(100% - 300px);">

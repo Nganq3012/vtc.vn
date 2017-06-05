@@ -11,6 +11,46 @@ require "lib/trangchu.php";
 else
   $p="";*/
  ?>
+ //Kiem tra dang nhap
+ <?php 
+if(isset($_POST["btnLogin"])){
+$un=$_POST["txtUn"];
+$pa=$_POST["txtPa"];
+$pa=md5($pa);
+$sql="SELECT * FROM Users where Username ='$un' AND Password ='$pa'";
+  $link=mysqli_connect('localhost','root','','vtcnews');
+  mysqli_set_charset($link, "UTF8");
+    //LAY TIN DAU TIEN 1 TIN
+  
+
+
+
+$user= mysqli_query($link,$sql);
+if(mysqli_num_rows($user)==1){
+  $row =mysqli_fetch_assoc($user);
+  $_SESSION["idUser"]=$row['idUser'];
+  $_SESSION["Username"]=$row['Username'];
+  $_SESSION["HoTen"]=$row['HoTen'];
+  $_SESSION["idGroup"]=$row['idGroup'];
+  
+  
+  
+
+}
+
+
+}
+ ?>
+//emprty thoat
+
+<?php 
+if(isset($_POST["btnExit"])){
+unset($_SESSION["idUser"]);
+unset($_SESSION["Username"]);
+unset($_SESSION["HoTen"]);
+unset($_SESSION["idGroup"]);
+}
+ ?>
 <!DOCTYPE html>
 <html xmlns="http://www.w3.org/1999/xhtml" xmlns:og="http://opengraphprotocol.org/schema/" itemscope="itemscope" itemtype="http://schema.org/WebPage">
 <head>
@@ -18,7 +58,6 @@ else
   <meta http-equiv="content-language" content="vi"/>
 
   <title>VTC News: Tin tức 24h trong ngày - Đọc báo điện tử mới nhất hôm nay</title>
-
   <link href="css/main.css" rel="stylesheet" type="text/css" />
   <link href="css/exp.css" rel="stylesheet" type="text/css" />
   <div id="abdMasthead" style="margin:0 auto; width:970px"></div>
@@ -38,19 +77,39 @@ else
       ?>
     </div>
   </div><div class="news_hot pkg">
+
   <?php
   require "block/maraquee_hot.php"; 
   ?>
+
   <ul class="fr list_weather">
     <li style="float: right;"><a title="Sự kiện nóng trong ngày" href="/su-kien-nong/">SỰ KIỆN HOT</a></li>
-    <li style="float: right; margin: 0;">HOTLINE: MB - 01255911911, MN - 0911848186</li>
+    <li style="float: right; margin: 0;">HOTLINE: MB - 01255911911, MN - 0911848186 </li>
   </ul>
+
   <div style="clear: both;"></div>
+
 </div>
 <div class="ads marbottom15"></div>
 <div class="content_home pkg home-wrap-1">
   <div class="col100per fl">
+ <!-- --------------------------------------------------------------------------- -->
+    
+
+<?php 
+
+if(!isset($_SESSION["idUser"])){
+ require "admin/formLogin.php";
+ }
+ else 
+ require "admin/admin.php";
+
+ ?>
+
+
+
     <div class="mar300 pkg box_comtent_home" style="margin-bottom: 0;">
+
       <?php
       require "block/top_trangchu.php"; 
       ?>
@@ -69,10 +128,15 @@ else
         ?>
 
 
-      </div></div>
+      </div>
+
+      </div>
+
     </div>
 
-  </div></div>
+
+  </div>
+  </div>
 </div>
 
 

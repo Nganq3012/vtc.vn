@@ -15,6 +15,12 @@ else
    <head prefix="og: http://ogp.me/ns# fb:http://ogp.me/ns/fb# article:http://ogp.me/ns/article#">
       <link rel="shortcut icon" href="/favicon.ico" />
       <link rel="amphtml" href="http://www.phapluatplus.vn/news/4617.amp">
+      <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <meta http-equiv="content-language" content="vi"/>
+
+  <title>VTC News: Tin tức 24h trong ngày - Đọc báo điện tử mới nhất hôm nay</title>
+  <link href="css/main.css" rel="stylesheet" type="text/css" />
+  <link href="css/exp.css" rel="stylesheet" type="text/css" />
       <script>
          (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
             (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
@@ -34,6 +40,35 @@ else
    </head>
    <body>
       <header>
+      <?php
+  require "block/menu_left.php"; 
+  ?>
+  <!-- /#cssmemu --><div class="wrapper">
+  <div id="header-sticky-wrapper" class="sticky-wrapper">
+    <div id="header">
+      <?php
+      require "block/header_menu.php"; 
+      ?>
+    </div>
+  </div><div class="news_hot pkg">
+
+  <?php
+  require "block/maraquee_hot.php"; 
+  ?>
+
+  <ul class="fr list_weather">
+    <li style="float: right;"><a title="Sự kiện nóng trong ngày" href="/su-kien-nong/">SỰ KIỆN HOT</a></li>
+    <li style="float: right; margin: 0;">HOTLINE: MB - 01255911911, MN - 0911848186 </li>
+  </ul>
+
+  <div style="clear: both;"></div>
+
+</div>
+
+
+
+
+
       <div class="details">
          <div class="pull-left" style="width: calc(100% - 300px - 20px);">
            <!--  <ul id="breaknews" style="display: none;">
