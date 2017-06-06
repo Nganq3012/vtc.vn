@@ -1,4 +1,13 @@
 <?php 
+function DanhSachTheLoai(){
+	$sql ="SELECT * FROM theloai 
+	ORDER BY idTL DESC
+	"; 
+	$link=mysqli_connect('localhost','root','','vtcnews');
+	mysqli_set_charset($link, "UTF8");
+		//LAY TIN DAU TIEN 1 TIN
+	return mysqli_query($link,$sql);
+}
 
 function stripUnicode($str){
   if(!$str) return false;

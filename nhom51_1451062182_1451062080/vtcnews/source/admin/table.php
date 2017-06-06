@@ -1,3 +1,6 @@
+<?php 
+require "../lib/trangquantri.php";
+ ?>
 <!doctype html>
 <html lang="en">
 <head>
@@ -165,9 +168,16 @@
                                     	<th>ThuTu</th>
                                     	<th>AnHien</th>
                                         <th>idLT</th>
-                                        <th><a href="listTheLoai.php">Thêm</a></th>
+                                        <th><a href="themTheLoai.php">Thêm</a></th>
                                     </thead>
                                     <tbody>
+                                    <?php 
+
+                                    $theloai=DanhSachTheLoai();
+                                    while($row_theloai=mysqli_fetch_assoc($theloai)){
+                                        ob_start();
+                                     ?>
+                                    
                                         <tr>
                                         	<td>{idTL}</td>
                                         	<td>{TenTL}</td>
@@ -178,42 +188,23 @@
                                             <td><a href="suaTheLoai.php?idTL={idTL}">Sửa</a>-<a href="xoaTheLoai.php?idTL={idTL}">Xóa</a></td>
 
                                         </tr>
-                                        <tr>
-                                        	<td>2</td>
-                                        	<td>Minerva Hooper</td>
-                                        	<td>$23,789</td>
-                                        	<td>Curaçao</td>
-                                        	<td>Sinaai-Waas</td>
-                                        </tr>
-                                        <tr>
-                                        	<td>3</td>
-                                        	<td>Sage Rodriguez</td>
-                                        	<td>$56,142</td>
-                                        	<td>Netherlands</td>
-                                        	<td>Baileux</td>
-                                        </tr>
-                                        <tr>
-                                        	<td>4</td>
-                                        	<td>Philip Chaney</td>
-                                        	<td>$38,735</td>
-                                        	<td>Korea, South</td>
-                                        	<td>Overland Park</td>
-                                        </tr>
-                                        <tr>
-                                        	<td>5</td>
-                                        	<td>Doris Greene</td>
-                                        	<td>$63,542</td>
-                                        	<td>Malawi</td>
-                                        	<td>Feldkirchen in Kärnten</td>
-                                        </tr>
-                                        <tr>
-                                        	<td>6</td>
-                                        	<td>Mason Porter</td>
-                                        	<td>$78,615</td>
-                                        	<td>Chile</td>
-                                        	<td>Gloucester</td>
-                                        </tr>
-                                    </tbody>
+                                    <?php  
+                                    //ob_start  vaf ob_get_clean maf  bao html nao thi  html nay chinh la chuoi $s
+                                    //có tac dung bien html thanh 1 chuoi nao do
+                                        $s=ob_get_clean(); 
+                                       // $s=str_replace(search, replace, subject)
+                             //search tu can tim kiem , subject tim kiem trong chuoi html
+                                        $s=str_replace("{idTL}",$row_theloai["idTL"],$s);
+                                         $s=str_replace("{TenTL}",$row_theloai["TenTL"],$s);
+                                          $s=str_replace("{TenTL_KhongDau}",$row_theloai["TenTL_KhongDau"],$s);
+                                           $s=str_replace("{ThuTu}",$row_theloai["ThuTu"],$s);
+                                            $s=str_replace("{AnHien}",$row_theloai["AnHien"],$s);
+                                              $s=str_replace("{idLT}",$row_theloai["idLT"],$s);
+
+                                        echo "$s";
+                                    }
+                                    ?>
+                                        </tbody>
                                 </table>
 
                             </div>
